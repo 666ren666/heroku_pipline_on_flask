@@ -25,7 +25,7 @@ def deletebook():
     id = request.args.get('id')
     cur.execute(f"DELETE FROM books WHERE rowid={id};")
     con.commit()
-    return redirect("/?message=Book Deleted")
+    return redirect("/?message= RAN Book Deleted")
 
 @app.route("/addbookindb", methods=['POST'])
 def addbook_indb():
@@ -36,7 +36,7 @@ def addbook_indb():
     print(f"INSERT INTO books VALUES ('{title}', '{author}', '{genre}', '{year}')")
     cur.execute(f"INSERT INTO books VALUES ('{title}', '{author}', '{genre}', '{year}')")
     con.commit()
-    return redirect("/?message=Book Added")
+    return redirect("/?message=RAN Book Added")
 
 @app.route("/addbook")
 def addbook():
